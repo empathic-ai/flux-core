@@ -1,0 +1,19 @@
+[package]
+name = "flux_core"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "A framework for building LLM agents."
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = ["bevy"]
+bevy = ["dep:bevy"]
+dynamic_linking = ["bevy?/dynamic_linking"]
+
+[dependencies]
+documented = "0.1.2"
+serde = { version = "1.0.149", features = ["derive"] }
+uuid = { version = "1.2.2", features = ["v4"] }
+bevy = { version = "=0.14.0", default-features = false, optional = true }
