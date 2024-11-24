@@ -9,7 +9,7 @@ description = "A framework for building LLM agents."
 
 [features]
 default = ["bevy"]
-bevy = ["dep:bevy"]
+bevy = ["dep:bevy", "bevy-trait-query"]
 dynamic_linking = ["bevy?/dynamic_linking"]
 
 [dependencies]
@@ -17,3 +17,4 @@ documented = "0.1.2"
 serde = { version = "1.0.149", features = ["derive"] }
 uuid = { version = "1.2.2", features = ["v4"] }
 bevy = { version = "=0.14.0", default-features = false, optional = true }
+bevy-trait-query = { git = "https://github.com/dead-money/bevy-trait-query", branch = "bevy-0.14", optional = true }
