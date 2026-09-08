@@ -9,12 +9,14 @@ description = "A framework for building LLM agents."
 
 [features]
 default = ["bevy"]
-bevy = ["dep:bevy", "bevy-trait-query"]
+bevy = ["bevy_reflect", "dep:bevy", "bevy-trait-query"]
+bevy_reflect = ["dep:bevy_reflect"]
 dynamic_linking = ["bevy?/dynamic_linking"]
 
 [dependencies]
 documented = "0.1.2"
 serde = { version = "1.0.149", features = ["derive"] }
 uuid = { version = "1.13", features = ["v4"] }
+bevy_reflect = { git = "https://github.com/empathic-ai/bevy.git", branch = "reflect/serializable-dynamic-types", default-features = false, features = ["uuid"], optional = true }
 bevy = { git = "https://github.com/empathic-ai/bevy.git", branch = "reflect/serializable-dynamic-types", default-features = false, optional = true }
 bevy-trait-query = { git = "https://github.com/Catchawink/bevy-trait-query.git", branch = "reflect/serializable-dynamic-types", optional = true }

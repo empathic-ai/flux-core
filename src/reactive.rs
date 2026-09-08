@@ -1,7 +1,12 @@
+#[cfg(feature = "bevy")]
 use bevy::{prelude::*, reflect::{DynamicStruct, Typed}};
+#[cfg(feature = "bevy_reflect")]
+use bevy_reflect::*;
 
-#[bevy_trait_query::queryable]
-#[reflect_trait]
+use ::serde::Serialize;
+
+#[cfg_attr(feature = "bevy", bevy_trait_query::queryable)]
+#[cfg_attr(feature = "bevy", reflect_trait)]
 pub trait Reactive: Reflect {
 
 }
